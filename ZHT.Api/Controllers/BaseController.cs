@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Http;
 using YuanXin.Framework.OAuth.Identity;
 using ZHT.Api.Models;
+using ZHT.Data.Models;
 
 namespace ZHT.Api.Controllers
 {
@@ -108,6 +109,34 @@ namespace ZHT.Api.Controllers
                     myStreamReader.Close();
                     myResponseStream.Close();
                 }
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 获取展会状态字符串
+        /// </summary>
+        /// <param name="model"></param>
+        public static string GetExhibitionStatusStr(Exhibition model)
+        {
+            string result = string.Empty;
+
+            if (model.endtime < DateTime.Now)
+            {
+                result = "已结束";
+            }
+            else if (model.starttime < DateTime.Now)
+            {
+                result = "展销中";
+            }
+            else if (model.starttime > DateTime.Now && model.recruitendtime < DateTime.Now)
+            {
+                result = "即将开始";
+            }
+            else if (model.recruitendtime > DateTime.Now)
+            {
+                result = "招展中";
             }
 
             return result;

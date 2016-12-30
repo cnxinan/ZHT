@@ -880,7 +880,7 @@ namespace ZHT.Api.Controllers
                                 ExhibitionName = p.exhibitionname,
                                 HeadImg = headImg,
                                 CreationDate = p.creattime.ToString(),
-                                Status = "已结束",
+                                Status = GetExhibitionStatusStr(p),
                                 SellerNumber = p.sellerorder.Count,
                                 UserNumber = p.enrolluser.Count
                             });
@@ -893,7 +893,7 @@ namespace ZHT.Api.Controllers
                                 ExhibitionName = p.exhibitionname,
                                 HeadImg = headImg,
                                 CreationDate = p.creattime.ToString(),
-                                Status = "正在进行",
+                                Status = GetExhibitionStatusStr(p),
                                 SellerNumber = p.sellerorder.Count,
                                 UserNumber = p.enrolluser.Count
                             });

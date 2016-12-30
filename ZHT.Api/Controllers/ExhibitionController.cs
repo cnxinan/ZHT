@@ -460,6 +460,90 @@ namespace ZHT.Api.Controllers
             ClientApiResult result = new ClientApiResult();
             try
             {
+                if (model == null)
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "传入实体为空!";
+                    return Ok(result);
+                }
+
+                //验证实体数据是否完整
+                if (model.ExhibitionProClass == null || model.ExhibitionProClass.Count == 0)
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "展品分类数据不完整!";
+                    return Ok(result);
+                }
+                if (model.Apply==null || model.Apply.seatSetTypes==null | model.Apply.seatSetTypes.Count == 0)
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "展位设置数据不完整!";
+                    return Ok(result);
+                }
+                if (model.Tickets == null || model.Tickets.TicketTypes == null | model.Tickets.TicketTypes.Count == 0)
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "门票设置数据不完整!";
+                    return Ok(result);
+                }
+                if (model.Market == null)
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "销售数据不完整!";
+                    return Ok(result);
+                }
+
+                //验证时间设置是否正确 展会发布>参展商报名截止>开始时间>结束时间
+                if (DateTime.Parse(model.EndDate) < DateTime.Now)
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "展会时间错误，结束时间不能早于当前时间!";
+                    return Ok(result);
+                }
+                if (DateTime.Parse(model.StartDate) > DateTime.Parse(model.EndDate))
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "展会时间错误，开始时间不能早于展会结束时间!";
+                    return Ok(result);
+                }
+                if (DateTime.Parse(model.Apply.RecruitEndTime) < DateTime.Now)
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "参展商报名截至时间错误，不能早于展会发布时间!";
+                    return Ok(result);
+                }
+                if (DateTime.Parse(model.StartDate) < DateTime.Parse(model.Apply.RecruitEndTime))
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "展会开始时间错误，不能早于参展商报名截至时间!";
+                    return Ok(result);
+                }
+                if (DateTime.Parse(model.EndDate) < DateTime.Parse(model.StartDate))
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "展会结束时间错误，不能早于展会开始时间!";
+                    return Ok(result);
+                }
+                if (DateTime.Parse(model.Tickets.EnrollEmdTime) < DateTime.Parse(model.Tickets.EnrollStartTime))
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "用户报名时间错误，结束时间不能早于开始时间!";
+                    return Ok(result);
+                }
+                if (DateTime.Parse(model.Tickets.EnrollStartTime) < DateTime.Parse(model.Apply.RecruitEndTime))
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "用户报名时间错误，开始时间不能早于招展时间!";
+                    return Ok(result);
+                }
+                if (DateTime.Parse(model.Tickets.EnrollStartTime) > DateTime.Parse(model.StartDate))
+                {
+                    result.Flag = ResultFlag.Error;
+                    result.Messages = "用户报名时间错误，结束时间不能晚于展会开始时间!";
+                    return Ok(result);
+                }
+                
+
                 model.BusinessID = CurrentUserId;
                 model.BusinessName = CurrentUserName;
                 model.Creater = CurrentUserId;
@@ -1528,7 +1612,7 @@ namespace ZHT.Api.Controllers
                             {
                                 ExhibitionId = p.id,
                                 CreationDate = p.creattime.ToString(),
-                                Status = "已结束",
+                                Status = GetExhibitionStatusStr(p),
                                 SellerNumber = p.sellerorder.Count,
                                 UserNumber = p.enrolluser.Count
                             });
@@ -1539,7 +1623,7 @@ namespace ZHT.Api.Controllers
                             {
                                 ExhibitionId = p.id,
                                 CreationDate = p.creattime.ToString(),
-                                Status = "正在进行",
+                                Status = GetExhibitionStatusStr(p),
                                 SellerNumber = p.sellerorder.Count,
                                 UserNumber = p.enrolluser.Count
                             });
@@ -1602,7 +1686,7 @@ namespace ZHT.Api.Controllers
                                     ExhibitionName = p.exhibitionname,
                                     HeadImg = headImg,
                                     CreationDate = p.creattime.ToString(),
-                                    Status = "已结束",
+                                    Status = GetExhibitionStatusStr(p),
                                     SellerNumber = p.sellerorder.Count,
                                     UserNumber = p.enrolluser.Count
                                 });
@@ -1618,7 +1702,7 @@ namespace ZHT.Api.Controllers
                                     ExhibitionName = p.exhibitionname,
                                     HeadImg = headImg,
                                     CreationDate = p.creattime.ToString(),
-                                    Status = "正在进行",
+                                    Status = GetExhibitionStatusStr(p),
                                     SellerNumber = p.sellerorder.Count,
                                     UserNumber = p.enrolluser.Count
                                 });
