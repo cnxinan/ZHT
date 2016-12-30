@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1BE4C08-A4CB-42AE-9E23-A61481139FA3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZHT.Repository</RootNamespace>
+    <AssemblyName>ZHT.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContentTypeRepository.cs" />
+    <Compile Include="ContentInfoRepository.cs" />
+    <Compile Include="CompanyUserRepository.cs" />
+    <Compile Include="CompanyRepository.cs" />
+    <Compile Include="BusinessTypeRepository.cs" />
+    <Compile Include="BankCardRepository.cs" />
+    <Compile Include="AuditStatuRepository.cs" />
+    <Compile Include="AttachmentTypeRepository.cs" />
+    <Compile Include="BaseTypesRepository.cs" />
+    <Compile Include="Base\BaseRepository.cs" />
+    <Compile Include="Base\BaseUnitOfWork.cs" />
+    <Compile Include="BusinessScopeRepository.cs" />
+    <Compile Include="BusinessScopeTypeRepository.cs" />
+    <Compile Include="EnrollUserRepository.cs" />
+    <Compile Include="ExhibitionProductClassRepository.cs" />
+    <Compile Include="ExhibitionProductRepository.cs" />
+    <Compile Include="ExhibitionRepository.cs" />
+    <Compile Include="ExhibitionTagRepository.cs" />
+    <Compile Include="FollowMomentRepository.cs" />
+    <Compile Include="GoodsRepository.cs" />
+    <Compile Include="GoodsUnitRepository.cs" />
+    <Compile Include="Goods_MaterialRepository.cs" />
+    <Compile Include="MaterialRepository.cs" />
+    <Compile Include="Goods_BusinessScopeTypeRepository.cs" />
+    <Compile Include="IContentTyperRepository.cs" />
+    <Compile Include="IContentInfoRepository.cs" />
+    <Compile Include="ICompanyUserRepository.cs" />
+    <Compile Include="ICompanyRepository.cs" />
+    <Compile Include="IBusinessTypeRepository.cs" />
+    <Compile Include="IBankCardRepository.cs" />
+    <Compile Include="IAuditStatuRepository.cs" />
+    <Compile Include="IAttachmentTypeRepository.cs" />
+    <Compile Include="IAttachmentRepository.cs" />
+    <Compile Include="IBaseTypesRepository.cs" />
+    <Compile Include="IBusinessScopeRepository.cs" />
+    <Compile Include="IBusinessScopeTypeRepository.cs" />
+    <Compile Include="IEnrollUserRepository.cs" />
+    <Compile Include="IExhibitionProductClassRepository.cs" />
+    <Compile Include="IExhibitionProductRepository.cs" />
+    <Compile Include="IExhibitionRepository.cs" />
+    <Compile Include="IExhibitionTagRepository.cs" />
+    <Compile Include="IFollowMomentRepository.cs" />
+    <Compile Include="IGoodsRepository.cs" />
+    <Compile Include="IGoodsUnitRepository.cs" />
+    <Compile Include="IMaterialRepository.cs" />
+    <Compile Include="IGoods_MaterialRepository.cs" />
+    <Compile Include="IGoods_BusinessScopeTypeRepository.cs" />
+    <Compile Include="IMomentReplyRepository.cs" />
+    <Compile Include="IMomentRepository.cs" />
+    <Compile Include="IMyFavoritesRepository.cs" />
+    <Compile Include="INotifyRepository.cs" />
+    <Compile Include="IOrderDetailRepository.cs" />
+    <Compile Include="IOrderRepository.cs" />
+    <Compile Include="IScheduleRepository.cs" />
+    <Compile Include="ISeatNoRepository.cs" />
+    <Compile Include="ISeatSetRepository.cs" />
+    <Compile Include="ISellerOrderDetailsRepository.cs" />
+    <Compile Include="ISellerOrderRepository.cs" />
+    <Compile Include="ITicketsSetRepository.cs" />
+    <Compile Include="IUserInfoRepository.cs" />
+    <Compile Include="ITicketsTypeRepository.cs" />
+    <Compile Include="ISettlementRepository.cs" />
+    <Compile Include="MomentReplyRepository.cs" />
+    <Compile Include="MomentRepository.cs" />
+    <Compile Include="MyFavoritesRepository.cs" />
+    <Compile Include="NotifyRepository.cs" />
+    <Compile Include="OrderDetailRepository.cs" />
+    <Compile Include="OrderRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryModel.cs" />
+    <Compile Include="ScheduleRepository.cs" />
+    <Compile Include="SeatNoRepository.cs" />
+    <Compile Include="SeatSetRepository.cs" />
+    <Compile Include="SellerOrderDetailsRepository.cs" />
+    <Compile Include="SellerOrderRepository.cs" />
+    <Compile Include="TicketsSetRepository.cs" />
+    <Compile Include="AttachmentRepository.cs" />
+    <Compile Include="UserInfoRepository.cs" />
+    <Compile Include="TicketsTypeRepository.cs" />
+    <Compile Include="SettlementRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZHT.Core\ZHTCore.csproj">
+      <Project>{cafaae1d-5506-4954-8a7d-17e37732b425}</Project>
+      <Name>ZHTCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZHT.Data\ZHT.Data.csproj">
+      <Project>{42b48086-c28d-444a-b030-a050ded74715}</Project>
+      <Name>ZHT.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

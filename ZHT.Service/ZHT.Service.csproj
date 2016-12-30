@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C77609A0-BC99-4FF6-BC43-A667467FF8EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZHT.Service</RootNamespace>
+    <AssemblyName>ZHT.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Webdiyer.MvcPager">
+      <HintPath>..\packages\Webdiyer.MvcPager.3.0.1.1\lib\Webdiyer.MvcPager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttachmentTypeService.cs" />
+    <Compile Include="AttachmentService.cs" />
+    <Compile Include="CompanyUserService.cs" />
+    <Compile Include="CompanyService.cs" />
+    <Compile Include="BaseTypesService.cs" />
+    <Compile Include="BusinessScopeService.cs" />
+    <Compile Include="BusinessScopeTypeService.cs" />
+    <Compile Include="EnrollUserService.cs" />
+    <Compile Include="ExhibitionProductClassService.cs" />
+    <Compile Include="ExhibitionProductService.cs" />
+    <Compile Include="ExhibitionService.cs" />
+    <Compile Include="ExhibitionTagService.cs" />
+    <Compile Include="FollowMomentService.cs" />
+    <Compile Include="GoodsService.cs" />
+    <Compile Include="GoodsUnitService.cs" />
+    <Compile Include="Goods_BusinessScopeTypeService - Copy %282%29.cs" />
+    <Compile Include="Goods_MaterialService.cs" />
+    <Compile Include="Goods_BusinessScopeTypeService.cs" />
+    <Compile Include="IAttachmentTypeService.cs" />
+    <Compile Include="IAttachmentService.cs" />
+    <Compile Include="ICompanyUserService.cs" />
+    <Compile Include="ICompanyService.cs" />
+    <Compile Include="IBaseTypesService.cs" />
+    <Compile Include="IBusinessScopeService.cs" />
+    <Compile Include="IBusinessScopeTypeService.cs" />
+    <Compile Include="IEnrollUserService.cs" />
+    <Compile Include="IExhibitionProductClassService.cs" />
+    <Compile Include="IExhibitionProductService.cs" />
+    <Compile Include="IExhibitionService.cs" />
+    <Compile Include="IExhibitionTagService.cs" />
+    <Compile Include="IFollowMomentService.cs" />
+    <Compile Include="IGoodsService.cs" />
+    <Compile Include="IGoodsUnitService.cs" />
+    <Compile Include="IMaterialService.cs" />
+    <Compile Include="IGoods_MaterialService.cs" />
+    <Compile Include="IGoods_BusinessScopeTypeService.cs" />
+    <Compile Include="IMomentReplyService.cs" />
+    <Compile Include="IMomentService.cs" />
+    <Compile Include="IMyFavoritesService.cs" />
+    <Compile Include="INotifyService.cs" />
+    <Compile Include="IOrderDetailService.cs" />
+    <Compile Include="IOrderService.cs" />
+    <Compile Include="IScheduleService.cs" />
+    <Compile Include="ISeatNoService.cs" />
+    <Compile Include="ISeatSetService.cs" />
+    <Compile Include="ISellerOrderDetailsService.cs" />
+    <Compile Include="ISellerOrderService.cs" />
+    <Compile Include="ITicketsSetService.cs" />
+    <Compile Include="IUserInfoService.cs" />
+    <Compile Include="ITicketsTypeService.cs" />
+    <Compile Include="ISettlementService.cs" />
+    <Compile Include="MomentReplyService.cs" />
+    <Compile Include="MomentService.cs" />
+    <Compile Include="MyFavoritesService.cs" />
+    <Compile Include="NotifyService.cs" />
+    <Compile Include="OrderDetailService.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleService.cs" />
+    <Compile Include="SeatNoService.cs" />
+    <Compile Include="SeatSetService.cs" />
+    <Compile Include="SellerOrderDetailsService.cs" />
+    <Compile Include="SellerOrderService.cs" />
+    <Compile Include="ServiceModel.cs" />
+    <Compile Include="TicketsSetService.cs" />
+    <Compile Include="UserInfoService.cs" />
+    <Compile Include="TicketsTypeService.cs" />
+    <Compile Include="SettlementService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZHT.Core\ZHTCore.csproj">
+      <Project>{cafaae1d-5506-4954-8a7d-17e37732b425}</Project>
+      <Name>ZHTCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZHT.Data\ZHT.Data.csproj">
+      <Project>{42b48086-c28d-444a-b030-a050ded74715}</Project>
+      <Name>ZHT.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZHT.Repository\ZHT.Repository.csproj">
+      <Project>{c1be4c08-a4cb-42ae-9e23-a61481139fa3}</Project>
+      <Name>ZHT.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

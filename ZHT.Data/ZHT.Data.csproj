@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{42B48086-C28D-444A-B030-A050DED74715}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZHT.Data</RootNamespace>
+    <AssemblyName>ZHT.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbFactory\DataBaseFactory.cs" />
+    <Compile Include="DbFactory\IDataBaseFactory.cs" />
+    <Compile Include="EntityFrameworkModel.cs" />
+    <Compile Include="Models\BaseTypes.cs" />
+    <Compile Include="Models\BusinessScope.cs" />
+    <Compile Include="Models\BusinessScopeType.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\EnrollUser.cs" />
+    <Compile Include="Models\Exhibition.cs" />
+    <Compile Include="Models\ExhibitionProduct.cs" />
+    <Compile Include="Models\ExhibitionProductClass.cs" />
+    <Compile Include="Models\ExhibitionTag.cs" />
+    <Compile Include="Models\FollowMoment.cs" />
+    <Compile Include="Models\Goods.cs" />
+    <Compile Include="Models\GoodsUnit.cs" />
+    <Compile Include="Models\Goods_BusinessScopeType.cs" />
+    <Compile Include="Models\Goods_Material.cs" />
+    <Compile Include="Models\Mapping\BusinessScopeMap.cs" />
+    <Compile Include="Models\Mapping\BusinessScopeTypeMap.cs" />
+    <Compile Include="Models\Mapping\EnrollUserMap.cs" />
+    <Compile Include="Models\Mapping\ExhibitionMap.cs" />
+    <Compile Include="Models\Mapping\ExhibitionProductClassMap.cs" />
+    <Compile Include="Models\Mapping\ExhibitionProductMap.cs" />
+    <Compile Include="Models\Mapping\ExhibitionTagMap.cs" />
+    <Compile Include="Models\Mapping\FollowMomentMap.cs" />
+    <Compile Include="Models\Mapping\GoodsMap.cs" />
+    <Compile Include="Models\Mapping\GoodsUnitMap.cs" />
+    <Compile Include="Models\Mapping\Goods_BusinessScopeTypeMap.cs" />
+    <Compile Include="Models\Mapping\Goods_MaterialMap.cs" />
+    <Compile Include="Models\Mapping\MaterialMap.cs" />
+    <Compile Include="Models\Mapping\MomentMap.cs" />
+    <Compile Include="Models\Mapping\MomentReplyMap.cs" />
+    <Compile Include="Models\Mapping\MyFavoritesMap.cs" />
+    <Compile Include="Models\Mapping\NotifyMap.cs" />
+    <Compile Include="Models\Mapping\OrderDetailMap.cs" />
+    <Compile Include="Models\Mapping\OrderMap.cs" />
+    <Compile Include="Models\Mapping\ScheduleMap.cs" />
+    <Compile Include="Models\Mapping\SeatNoMap.cs" />
+    <Compile Include="Models\Mapping\SeatSetMap.cs" />
+    <Compile Include="Models\Mapping\SellerOrderDetailsMap.cs" />
+    <Compile Include="Models\Mapping\SellerOrderMap.cs" />
+    <Compile Include="Models\Mapping\TicketsSetMap.cs" />
+    <Compile Include="Models\Mapping\UserInfoMap.cs" />
+    <Compile Include="Models\Mapping\TicketsTypeMap.cs" />
+    <Compile Include="Models\Mapping\SettlementMap.cs" />
+    <Compile Include="Models\Mapping\CompanyUserMap.cs" />
+    <Compile Include="Models\Mapping\AttachmentMap.cs" />
+    <Compile Include="Models\Mapping\AttachmentTypeMap.cs" />
+    <Compile Include="Models\Mapping\AuditStatuMap.cs" />
+    <Compile Include="Models\Mapping\BankCardMap.cs" />
+    <Compile Include="Models\Mapping\BusinessTypeMap.cs" />
+    <Compile Include="Models\Mapping\CompanyMap.cs" />
+    <Compile Include="Models\Mapping\ContentTypeMap.cs" />
+    <Compile Include="Models\Mapping\ContentInfoMap.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\Moment.cs" />
+    <Compile Include="Models\MomentReply.cs" />
+    <Compile Include="Models\MyFavorites.cs" />
+    <Compile Include="Models\Notify.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Schedule.cs" />
+    <Compile Include="Models\SeatNo.cs" />
+    <Compile Include="Models\SeatSet.cs" />
+    <Compile Include="Models\SellerOrder.cs" />
+    <Compile Include="Models\SellerOrderDetails.cs" />
+    <Compile Include="Models\Settlement.cs" />
+    <Compile Include="Models\TicketsSet.cs" />
+    <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="Models\TicketsType.cs" />
+    <Compile Include="Models\CompanyUser.cs" />
+    <Compile Include="Models\BankCard.cs" />
+    <Compile Include="Models\AuditStatu.cs" />
+    <Compile Include="Models\BusinessType.cs" />
+    <Compile Include="Models\Attachment.cs" />
+    <Compile Include="Models\AttachmentType.cs" />
+    <Compile Include="Models\ContentType.cs" />
+    <Compile Include="Models\ContentInfo.cs" />
+    <Compile Include="Models\ZHTDataContext.cs" />
+    <Compile Include="Models\Mapping\BaseTypesMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

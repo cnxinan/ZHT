@@ -1,0 +1,37 @@
+﻿--新增展会logo
+alter talbe Exhibition add HeadImg nvarchar(200)    		  //去掉，改到附件表
+--新增展会分布图
+alter table Exhibition add DistributionMap nvarchar(200)      //去掉，改到附件表
+
+alter table ExhibitionProduct add ProductName nvarchar(50)    //展品名称
+
+alter table ExhibitionProduct add ProductImage nvarchar(200)  //展品图片-去掉，改到附件表
+	
+alter table enrolluser add TicketTypeCode nvarchar(50) 			//门票类型ID
+
+alter table ExhibitionProductClass add ClassCode nvarchar(50) 	//展品分类ID --去掉
+
+alter table sellerorder add SellerName nvarchar(200)           	//展商名称  2016-11-2 去掉，从company表读取
+
+2016-11-19 创建结算表
+CREATE TABLE [dbo].[Settlement](
+	[ID] [nvarchar](50) NOT NULL,
+	[ExhibitionCode] [nvarchar](50) NULL,
+	[Type] [int] NULL,
+	[Creater] [nvarchar](50) NULL,
+	[CreatTime] [datetime] NULL,
+	[IsDel] [int] NULL,	
+ CONSTRAINT [PK_Settlement] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+2016-11-22 展会表新增 省市区 字段
+
+alter table Exhibition add Province nvarchar(20) 
+alter table Exhibition add City nvarchar(20)
+alter table Exhibition add Area nvarchar(100)
+
+  
+         
